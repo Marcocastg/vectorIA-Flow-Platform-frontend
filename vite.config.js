@@ -10,6 +10,11 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  server: {
+    preview: {
+      allowedHosts: ['www.vectoria.me'],
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
