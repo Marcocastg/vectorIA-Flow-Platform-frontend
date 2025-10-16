@@ -13,12 +13,12 @@ export default {
         'background-dark': '#161022',
       },
       fontFamily: {
-        display: ['Work Sans', 'sans-serif'], // Asegúrate de tener un fallback
+        display: ['Nunito', 'sans-serif'],
       },
       borderRadius: {
-        DEFAULT: '0.25rem',
-        lg: '0.5rem',
-        xl: '0.75rem',
+        DEFAULT: '0.5rem', // Actualizado
+        lg: '1rem',      // Actualizado
+        xl: '1.5rem',
         full: '9999px',
       },
     },
