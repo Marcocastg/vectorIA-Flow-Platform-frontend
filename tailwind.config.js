@@ -13,7 +13,7 @@ export default {
         'background-dark': '#161022',
       },
       fontFamily: {
-        display: ['Nunito', 'sans-serif'],
+        display: ['Atkinson Hyperlegible Next', 'sans-serif'],
       },
       borderRadius: {
         DEFAULT: '0.5rem', // Actualizado
