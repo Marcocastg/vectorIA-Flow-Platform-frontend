@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Livestream Stats - Models</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#5b13ec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#161022",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body>
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden font-display">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-white/10 dark:border-b-[#2e2839] px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-black dark:text-white">
+<div class="size-4">
+<svg class="text-primary" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Livestream Stats</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-black dark:text-white text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-black dark:text-white text-sm font-medium leading-normal" href="#">Streams</a>
+<a class="text-primary dark:text-primary text-sm font-bold leading-normal" href="#">Models</a>
+<a class="text-black dark:text-white text-sm font-medium leading-normal" href="#">Settings</a>
+</div>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Go Live</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-primary/20 dark:bg-[#2e2839] text-black dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-black dark:text-white">notifications_off</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-primary/20 dark:bg-[#2e2839] text-black dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-black dark:text-white">chat_bubble</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABEUbd-zpXKbLJ6ekxxrhf6GuFC6p1hVdG1_fiQ79GsGxmTu4JU1gQygF7zRRd5j10-Al9rZ4luT2frsz_ihItqSpUAz7ljKy2D4i2Ieuy4udsg7ybQohftXxjlDocqBEmrWWyB6lWq3Lzi0EP5Af_AP4iKzqKM1HRHH71JpRLWc0H9kfTDJSiFocW4eGjjY69k70IYOtq347pMf8KSY92bGcZmZPoiPl-AQYPV-FYtU7bzLJW4ma2kX6xWep28Dy7qx4xTFIy-rsc");'></div>
+</div>
+<div class="md:hidden">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-primary/20 dark:bg-[#2e2839] text-black dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-black dark:text-white">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<div class="flex flex-wrap justify-between gap-3 p-4 md:p-10">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-primary text-4xl font-black leading-tight tracking-[-0.033em]">Our Prediction Models</p>
+<p class="text-gray-600 dark:text-[#a69db9] text-base font-normal leading-normal">
+                  Our application uses a combination of machine learning models to generate predictions. This page details how each one works.
+                </p>
+</div>
+</div>
+<div class="flex flex-col p-4 md:px-10">
+<details class="flex flex-col border-t border-t-white/10 dark:border-t-[#433b54] py-2 group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">SUPPORT VECTOR MACHINE</p>
+<span class="material-symbols-outlined text-black dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-[#a69db9] text-sm font-normal leading-normal pb-2">
+                  This model finds the best line or boundary that separates different types of data, helping us classify whether a stream is likely to be successful or not.
+                </p>
+</details>
+<details class="flex flex-col border-t border-t-white/10 dark:border-t-[#433b54] py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">K-NEAREST NEIGHBORS</p>
+<span class="material-symbols-outlined text-black dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-[#a69db9] text-sm font-normal leading-normal pb-2">
+                  This model classifies data points based on the points that are most similar to it. It's useful for finding streams with similar characteristics.
+                </p>
+</details>
+<details class="flex flex-col border-t border-t-white/10 dark:border-t-[#433b54] py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">XGBOOST</p>
+<span class="material-symbols-outlined text-black dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-[#a69db9] text-sm font-normal leading-normal pb-2">
+                  A powerful and efficient model that builds decision trees sequentially, with each new tree correcting the errors of the previous one, leading to highly accurate predictions.
+                </p>
+</details>
+<details class="flex flex-col border-t border-t-white/10 dark:border-t-[#433b54] py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">RANDOM FOREST</p>
+<span class="material-symbols-outlined text-black dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-[#a69db9] text-sm font-normal leading-normal pb-2">
+                  This model creates a 'forest' of many decision trees and merges them together to get a more accurate and stable prediction.
+                </p>
+</details>
+<details class="flex flex-col border-t border-t-white/10 dark:border-t-[#433b54] py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">PROPHET</p>
+<span class="material-symbols-outlined text-black dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-[#a69db9] text-sm font-normal leading-normal pb-2">
+                  Developed by Facebook, this model is excellent at forecasting time-series data, like predicting future viewership based on past trends and seasonality.
+                </p>
+</details>
+<details class="flex flex-col border-t border-t-white/10 dark:border-t-[#433b54] py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">LINEAR REGRESSION</p>
+<span class="material-symbols-outlined text-black dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-[#a69db9] text-sm font-normal leading-normal pb-2">
+                  A fundamental statistical model that finds a linear relationship between input features and the output, useful for predicting continuous values like view count.
+                </p>
+</details>
+<details class="flex flex-col border-t border-t-white/10 dark:border-t-[#433b54] py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">NEURAL NETWORKS</p>
+<span class="material-symbols-outlined text-black dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-[#a69db9] text-sm font-normal leading-normal pb-2">
+                  Inspired by the human brain, these models learn complex patterns in the data through interconnected layers of nodes, allowing for more nuanced and accurate predictions.
+                </p>
+</details>
+<details class="flex flex-col border-t border-b border-y-white/10 dark:border-y-[#433b54] py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">DECISION TREE REGRESSION</p>
+<span class="material-symbols-outlined text-black dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-[#a69db9] text-sm font-normal leading-normal pb-2">
+                  This model uses a tree-like structure of decisions to predict a continuous value. It's easy to interpret and visualizes how a prediction is made.
+                </p>
+</details>
+</div>
+</main>
+<footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+<div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+<a class="text-gray-600 dark:text-[#a69db9] text-base font-normal leading-normal min-w-40" href="#">About</a>
+<a class="text-gray-600 dark:text-[#a69db9] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+<a class="text-gray-600 dark:text-[#a69db9] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<a href="#">
+<span class="material-symbols-outlined text-gray-600 dark:text-[#a69db9]">alternate_email</span>
+</a>
+<a href="#">
+<span class="material-symbols-outlined text-gray-600 dark:text-[#a69db9]">social_leaderboard</span>
+</a>
+<a href="#">
+<span class="material-symbols-outlined text-gray-600 dark:text-[#a69db9]">photo_camera</span>
+</a>
+</div>
+<p class="text-gray-600 dark:text-[#a69db9] text-base font-normal leading-normal">© 2023 Livestream Stats. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

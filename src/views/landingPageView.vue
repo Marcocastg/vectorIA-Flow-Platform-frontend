@@ -1,6 +1,6 @@
 <script setup>
-import FeaturesSection from '@/components/featuresHomeSection.vue';
-import HeroSection from '@/components/heroHomeSection.vue';
+import FeaturesSection from '@/components/streamers/featuresHomeSection.vue';
+import HeroSection from '@/components/streamers/heroHomeSection.vue';
 
 
 </script>

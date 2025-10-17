@@ -1,7 +1,7 @@
 <script setup>
-import PaginationStreamers from '@/components/paginationStreamers.vue';
-import StreamersFilterStreamers from '@/components/streamersFilterStreamers.vue';
-import StreamersTableStreamers from '@/components/streamersTableStreamers.vue';
+import PaginationStreamers from '@/components/home/paginationStreamers.vue';
+import StreamersFilterStreamers from '@/components/home/streamersFilterStreamers.vue';
+import StreamersTableStreamers from '@/components/home/streamersTableStreamers.vue';
 
 </script>
 <template>

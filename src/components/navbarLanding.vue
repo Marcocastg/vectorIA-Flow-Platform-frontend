@@ -18,8 +18,8 @@
 <nav class="hidden items-center gap-8 md:flex">
 <RouterLink to="/" class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Home</RouterLink>
 <RouterLink to="/streamers" class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Streamers</RouterLink>
-<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Models</a>
-<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">About</a>
+<RouterLink to="/models" class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Models</RouterLink>
+<RouterLink to="/about" class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">About</RouterLink>
 </nav>
 <div class="flex items-center gap-2">
 <a class="rounded-lg px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" href="#">Login</a>
