@@ -72,7 +72,7 @@ function handleRegister() {
             <div class="space-y-3">
               <div>
                 <label class="sr-only" for="email">Email</label>
-                <input v-model="loginEmail" id="email" type="email" autocomplete="email" required placeholder="Username or Email" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-200/10 dark:border-white/10 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-sm" />
+                <input v-model="loginEmail" id="email" type="email" autocomplete="email" required placeholder="Email" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-200/10 dark:border-white/10 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-sm" />
               </div>
               <div>
                 <label class="sr-only" for="password">Password</label>
