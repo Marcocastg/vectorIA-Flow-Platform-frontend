@@ -10,7 +10,8 @@ const loginEmail = ref('');
 const loginPassword = ref('');
 
 // --- DATOS DEL FORMULARIO DE REGISTRO ---
-const registerUsername = ref('');
+const registerFirstName = ref('');
+const registerLastName = ref('');
 const registerEmail = ref('');
 const registerPassword = ref('');
 const registerCompanyName = ref('');
@@ -28,7 +29,8 @@ function handleLogin() {
 function handleRegister() {
   // Aquí irá la lógica para enviar los datos de registro al backend
   console.log('Intentando registrar con:', {
-    username: registerUsername.value,
+    firstName: registerFirstName.value,
+    lastName: registerLastName.value,
     email: registerEmail.value,
     password: registerPassword.value,
     companyName: registerCompanyName.value,
@@ -69,7 +71,7 @@ function handleRegister() {
           <form @submit.prevent="handleLogin" class="space-y-4">
             <div class="space-y-3">
               <div>
-                <label class="sr-only" for="email">Username or Email</label>
+                <label class="sr-only" for="email">Email</label>
                 <input v-model="loginEmail" id="email" type="email" autocomplete="email" required placeholder="Username or Email" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-200/10 dark:border-white/10 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-sm" />
               </div>
               <div>
@@ -92,8 +94,12 @@ function handleRegister() {
            <form @submit.prevent="handleRegister" class="space-y-6">
             <div class="space-y-4">
                 <div>
-                  <label class="sr-only" for="username">Username</label>
-                  <input v-model="registerUsername" id="username" type="text" autocomplete="username" required placeholder="Username" class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-200/10 dark:border-white/10 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-sm" />
+                  <label class="sr-only" for="username">First Name</label>
+                  <input v-model="registerFirstName" id="firstName-register" type="text" autocomplete="firstName" required placeholder="First Name" class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-200/10 dark:border-white/10 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-sm" />
+                </div>
+                <div>
+                  <label class="sr-only" for="username">Last Name</label>
+                  <input v-model="registerLastName" id="lastName-register" type="text" autocomplete="lastName" required placeholder="Last Name" class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-200/10 dark:border-white/10 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-sm" />
                 </div>
                 <div>
                   <label class="sr-only" for="email-register">Email address</label>
@@ -102,6 +108,10 @@ function handleRegister() {
                 <div>
                   <label class="sr-only" for="password-register">Password</label>
                   <input v-model="registerPassword" id="password-register" type="password" autocomplete="new-password" required placeholder="Password" class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-200/10 dark:border-white/10 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-sm" />
+                </div>
+                <div>
+                  <label class="sr-only" for="companyName-register">Company Name</label>
+                  <input v-model="registerCompanyName" id="companyName-register" type="text" autocomplete="new-company" required placeholder="Company Name" class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-200/10 dark:border-white/10 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 text-sm" />
                 </div>
                 </div>
             <div>
