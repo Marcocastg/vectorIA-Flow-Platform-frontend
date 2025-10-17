@@ -3,6 +3,7 @@ import LandingPageView from '@/views/landingPageView.vue'
 import LandingStreamersView from '@/views/landingStreamersView.vue'
 import LandingModelsView from '@/views/landingModelsView.vue'
 import LandingAboutView from '@/views/landingAboutView.vue'
+import LoginRegisterView from '@/views/loginRegisterView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/about',
       name: 'aboutPage',
       component: LandingAboutView,
+    },
+    {
+      path: '/login',
+      name: 'loginPage',
+      component: LoginRegisterView,
     },
   ],
 })

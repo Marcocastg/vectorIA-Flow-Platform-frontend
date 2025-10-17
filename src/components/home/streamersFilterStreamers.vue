@@ -14,15 +14,7 @@
         <span class="material-symbols-outlined text-sm">expand_more</span>
       </button>
       <button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors whitespace-nowrap">
-        <span class="text-sm font-medium">Genre</span>
-        <span class="material-symbols-outlined text-sm">expand_more</span>
-      </button>
-      <button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors whitespace-nowrap">
         <span class="text-sm font-medium">Popularity</span>
-        <span class="material-symbols-outlined text-sm">expand_more</span>
-      </button>
-      <button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors whitespace-nowrap">
-        <span class="text-sm font-medium">Live Status</span>
         <span class="material-symbols-outlined text-sm">expand_more</span>
       </button>
     </div>
