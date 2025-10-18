@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://vectoriaflow-backend-nestjs-production.up.railway.app/api/:path*"
+    }
+  ]
+}
