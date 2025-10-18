@@ -61,7 +61,7 @@ onMounted(() => {
             Error: {{ error }}
           </td>
     </tr>
-<tr v-else v-for="streamer in sortedStreamers" :key="streamer.uuid" class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
+<tr v-else v-for="streamer in streamers" :key="streamer.uuid" class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
 <td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-white font-medium">{{ streamer.name }}</td>
 <td class="px-6 py-4 text-gray-500 dark:text-gray-400">{{streamer.platform.name}}</td>
 <td class="px-6 py-4 text-right text-gray-500 dark:text-gray-400">{{ streamer.followers }}</td>
