@@ -1,11 +1,18 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 // 1. ESTADO REACTIVO
 // Creamos variables para almacenar los datos, el estado de carga y posibles errores.
 const streamers = ref([]); // Almacenará la lista de streamers que llegue de la API
 const isLoading = ref(true); // Para mostrar un mensaje de "cargando"
 const error = ref(null); // Para mostrar un mensaje de error si la API falla
+
+// 2. Creá la propiedad computada para ordenar
+const sortedStreamers = computed(() => {
+  // Creamos una copia del array para no modificar el original
+  // y lo ordenamos de mayor a menor por 'followers'.
+  return [...streamers.value].sort((a, b) => b.followers - a.followers);
+});
 
 async function fetchStreamers() {
   try {
@@ -54,7 +61,7 @@ onMounted(() => {
             Error: {{ error }}
           </td>
     </tr>
-<tr v-else v-for="streamer in streamers" :key="streamer.uuid" class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
+<tr v-else v-for="streamer in sortedStreamers" :key="streamer.uuid" class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
 <td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-white font-medium">{{ streamer.name }}</td>
 <td class="px-6 py-4 text-gray-500 dark:text-gray-400">{{streamer.platform.name}}</td>
 <td class="px-6 py-4 text-right text-gray-500 dark:text-gray-400">{{ streamer.followers }}</td>
