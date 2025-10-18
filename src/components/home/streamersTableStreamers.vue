@@ -7,13 +7,16 @@ const streamers = ref([]); // Almacenará la lista de streamers que llegue de la
 const isLoading = ref(true); // Para mostrar un mensaje de "cargando"
 const error = ref(null); // Para mostrar un mensaje de error si la API falla
 
-// 2. Creá la propiedad computada para ordenar
 const sortedStreamers = computed(() => {
-  // Creamos una copia del array para no modificar el original
-  // y lo ordenamos de mayor a menor por 'followers'.
-  return [...streamers.value].sort((a, b) => b.followers - a.followers);
+  if (!streamers.value) return []; // Add a guard for safety
+  
+  return [...streamers.value].sort((a, b) => {
+    // If a or b's followers are null/undefined, treat them as 0
+    const followersA = a.followers || 0;
+    const followersB = b.followers || 0;
+    return followersB - followersA;
+  });
 });
-
 async function fetchStreamers() {
   try {
     const response = await fetch('/api/channel'); // Changed to your specific endpoint
