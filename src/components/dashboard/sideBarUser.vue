@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 <template>
   <aside class="w-64 bg-background-light dark:bg-background-dark border-r border-stone-200 dark:border-stone-800 flex flex-col">
     <div class="p-6 flex items-center gap-3">
-      <div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("/ruta/a/tu/avatar.jpg");'></div>
+      <div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://ik.imagekit.io/mcgonza/logocolor.png");'></div>
       <h1 class="text-xl font-bold text-stone-900 dark:text-white">VectoriaFlow</h1>
     </div>
     <nav class="flex-1 px-4 py-2 space-y-2">
