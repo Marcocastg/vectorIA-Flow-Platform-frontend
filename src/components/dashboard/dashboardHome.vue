@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router';
 import LineAbout from '../about/lineAbout.vue';
 import DashboardHomePredictions from './dashboardHomePredictions.vue';
 import DashboardHomeTrending from './dashboardHomeTrending.vue';
@@ -8,9 +9,9 @@ import DashboardHomeTrending from './dashboardHomeTrending.vue';
 <template>
   <div> <header class="flex justify-between items-center mb-8">
       <h1 class="text-4xl font-bold text-stone-900 dark:text-white">Dashboard</h1>
-      <button class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors">
+      <RouterLink to="/dashboard/predictions"><button class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors">
         Make New Prediction
-      </button>
+      </button></RouterLink>
     </header>
     <section class="mb-12">
       <DashboardHomeTrending trendingName="Twitch"/>
