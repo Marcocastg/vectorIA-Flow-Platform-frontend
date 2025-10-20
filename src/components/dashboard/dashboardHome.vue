@@ -17,7 +17,6 @@ import DashboardHomeTrending from './dashboardHomeTrending.vue';
       <LineAbout/>
       <DashboardHomeTrending trendingName="Kick"/></section>
     <section>
-        <LineAbout/>
-      <DashboardHomePredictions/></section>
+    <LineAbout/></section>
   </div>
 </template>
