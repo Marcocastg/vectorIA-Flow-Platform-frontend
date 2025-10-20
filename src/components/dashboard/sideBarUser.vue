@@ -18,6 +18,9 @@ import { RouterLink } from 'vue-router';
       <RouterLink to="/dashboard/predictions" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-stone-200/50 dark:hover:bg-white/10" active-class="bg-primary/10 dark:bg-primary/20 text-primary">
         <span class="font-medium">Predictions</span>
       </RouterLink>
+      <RouterLink to="/dashboard/reports" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-stone-200/50 dark:hover:bg-white/10" active-class="bg-primary/10 dark:bg-primary/20 text-primary">
+        <span class="font-medium">Prediction Reports</span>
+      </RouterLink>
       </nav>
     <div class="p-4 mt-auto">
       </div>

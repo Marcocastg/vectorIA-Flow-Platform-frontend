@@ -9,6 +9,9 @@ import DashboardHome from '@/components/dashboard/dashboardHome.vue'
 import DefaultLayout from '@/layout/defaultLayout.vue'
 import DashboardStreamers from '@/components/dashboard/streamers/dashboardStreamers.vue'
 import DashboardPredictions from '@/components/dashboard/predictions/dashboardPredictions.vue'
+import DashboardReports from '@/components/dashboard/reports/dashboardReports.vue'
+import Report from '@/components/dashboard/reports/report/report.vue'
+import ReportsIndex from '@/components/dashboard/reports/reportsIndex.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -66,6 +69,25 @@ const router = createRouter({
           name: 'dashboardPredictions',
           component: DashboardPredictions // Muestra el componente Home
         },
+        {
+          path: 'reports', // Cuando la ruta es exactamente '/dashboard'
+          name: 'dashboardReports',
+          component: DashboardReports, // Muestra el componente Home
+          children: [
+            {
+              path: '', // Cuando la ruta es exactamente '/dashboard'
+              name: 'reportsList',
+              component: ReportsIndex,
+            },
+            {
+              path: 'uuidejemplo', // Cuando la ruta es exactamente '/dashboard'
+              name: 'reportsReport',
+              component: Report,
+            }
+          ]
+        },
+
+        
       ],
     },
   ],
