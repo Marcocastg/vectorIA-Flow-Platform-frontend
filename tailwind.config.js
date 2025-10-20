@@ -11,6 +11,12 @@ export default {
         primary: '#5b13ec',
         'background-light': '#f6f6f8',
         'background-dark': '#161022',
+        "surface-light": "#ffffff",
+        "surface-dark": "#211a30",
+        "muted-light": "#6b7280",
+        "muted-dark": "#9ca3af",
+        "text-light": "#111827",
+        "text-dark": "#ffffff"     // Color para placeholder-muted-dark
       },
       fontFamily: {
         display: ['Atkinson Hyperlegible Next', 'sans-serif'],

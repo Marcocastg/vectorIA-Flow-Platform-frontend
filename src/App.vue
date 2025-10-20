@@ -7,9 +7,6 @@ import LineAbout from '@/components/about/lineAbout.vue';
 
 <template>
     <div class="flex min-h-screen flex-col">
-        <navbar/>
         <RouterView/>
-        <LineAbout/>
-        <FooterPage/>
     </div>
 </template>
