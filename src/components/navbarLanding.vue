@@ -23,7 +23,7 @@
 </nav>
 <div class="flex items-center gap-2">
 <RouterLink to="/login" class="rounded-lg px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" href="#">Login</RouterLink>
-<RouterLink to="/dashboard" class="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition-transform hover:scale-105" href="#">Register</RouterLink>
+<RouterLink to="/login" class="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition-transform hover:scale-105" href="#">Register</RouterLink>
 </div>
 </div>
 </header>
