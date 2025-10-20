@@ -12,6 +12,7 @@ import DashboardPredictions from '@/components/dashboard/predictions/dashboardPr
 import DashboardReports from '@/components/dashboard/reports/dashboardReports.vue'
 import Report from '@/components/dashboard/reports/report/report.vue'
 import ReportsIndex from '@/components/dashboard/reports/reportsIndex.vue'
+import { useAuthStore } from '@/stores/auth';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -92,5 +93,21 @@ const router = createRouter({
     },
   ],
 })
+
+router.beforeEach(async (to, from, next) => {
+  const authStore = useAuthStore();
+
+
+  const requiresAuth = to.meta.requiresAuth;
+  const isLoggedIn = authStore.isLoggedIn;
+
+  if (requiresAuth && !isLoggedIn) {
+    next({ name: 'loginPage' }); // <- Usa el nombre correcto de la ruta
+  } else if (to.name === 'loginPage' && isLoggedIn) {
+    next({ name: 'dashboardHome' }); // <- Asegúrate que este nombre de ruta exista
+  } else {
+    next();
+  }
+});
 
 export default router

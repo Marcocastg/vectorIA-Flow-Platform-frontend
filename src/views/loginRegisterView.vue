@@ -1,13 +1,16 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useAuthStore } from '@/stores/auth';
 
 // --- ESTADO ---
 // Esta variable controlará qué formulario se muestra: 'login' o 'register'.
 const activeTab = ref('login');
 
 // --- DATOS DEL FORMULARIO DE LOGIN ---
-const loginEmail = ref('');
-const loginPassword = ref('');
+const errorMsg = ref('');
+const router = useRouter();
+const authStore = useAuthStore();
 
 // --- DATOS DEL FORMULARIO DE REGISTRO ---
 const registerFirstName = ref('');
@@ -16,26 +19,40 @@ const registerEmail = ref('');
 const registerPassword = ref('');
 const registerCompanyName = ref('');
 
-// --- MÉTODOS ---
-function handleLogin() {
-  // Aquí irá la lógica para enviar los datos de login al backend
-  console.log('Intentando iniciar sesión con:', {
-    email: loginEmail.value,
-    password: loginPassword.value,
-  });
-  // Ejemplo: await authStore.login({ email: loginEmail.value, password: loginPassword.value });
-}
+const loginEmail = ref('');
+const loginPassword = ref('');
 
-function handleRegister() {
+// --- MÉTODOS ---
+const handleLogin = async () => {
+  const success = await authStore.login(loginEmail.value, loginPassword.value);
+  if (success) {
+    // Si el login es exitoso, redirige al dashboard
+    toast.success('¡Bienvenido de nuevo!');
+    router.push({ name: 'dashboard' });
+  } else {
+    // Si falla, muestra un mensaje de error
+    toast.error('Email o contraseña incorrectos.');
+  }
+};
+
+async function handleRegister() {
   // Aquí irá la lógica para enviar los datos de registro al backend
-  console.log('Intentando registrar con:', {
-    firstName: registerFirstName.value,
-    lastName: registerLastName.value,
-    email: registerEmail.value,
-    password: registerPassword.value,
-    companyName: registerCompanyName.value,
-  });
-  // Ejemplo: await authStore.register({ ... });
+    const result = await authStore.register({
+      firstName: registerFirstName.value,
+      lastName: registerLastName.value,
+      email: registerEmail.value,
+      password: registerPassword.value,
+      companyName: registerCompanyName.value,
+    });
+
+  if (result.success) {
+    toast.success('¡Registro exitoso! Ahora puedes iniciar sesión.');
+    // Cambiamos a la pestaña de login para que el usuario pueda entrar
+    activeTab.value = 'login';
+  } else {
+    // Mostramos el mensaje de error que viene del backend
+    toast.error(`Error en el registro: ${result.message}`);
+  }
 }
 </script>
 
