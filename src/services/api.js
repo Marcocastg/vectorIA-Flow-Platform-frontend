@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'http://www.vectoria.me/api',
+  baseURL: 'https://www.vectoria.me/api',
   withCredentials: true,
 });
 
