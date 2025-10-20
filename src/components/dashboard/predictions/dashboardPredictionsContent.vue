@@ -104,9 +104,10 @@ onMounted(() => {
 <div>
 <label class="block text-sm font-medium text-text-light dark:text-text-dark mb-2" for="metrics">Metrics to Predict</label>
 <select class="form-select w-full px-4 py-3 rounded-lg border border-light dark:border-dark bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 appearance-none" id="metrics">
-<option>Viewer Count</option>
-<option>Subscriber Growth</option>
-<option>Chat Engagement</option>
+<option>Audience</option>
+<option>Interactions</option>
+<option>Growth</option>
+<option>Colaborations</option>
 </select>
 </div>
 </div>
