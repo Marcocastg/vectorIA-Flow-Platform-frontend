@@ -2,11 +2,12 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
-import { toast } from 'vue-toastification';
+import { useToast, toast } from 'vue-toastification';
 
 // --- ESTADO ---
 // Esta variable controlará qué formulario se muestra: 'login' o 'register'.
 const activeTab = ref('login');
+const toast = useToast();
 
 // --- DATOS DEL FORMULARIO DE LOGIN ---
 const errorMsg = ref('');
