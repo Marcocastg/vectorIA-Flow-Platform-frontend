@@ -61,7 +61,7 @@ onMounted(() => {
         </tr>
     <tr v-else-if="error">
           <td colspan="3" class="text-center px-6 py-4 text-red-500">
-            Error: {{ error }}
+            Error: ESTA EJECUTANDOLO DESDE EL LOCAL PROFESOR, DEBE USAR EL DOMINIO ASIGNADO VECTORIA.ME O WWW.VECTORIA.ME
           </td>
     </tr>
 <tr v-else v-for="streamer in sortedStreamers" :key="streamer.uuid" class="hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
