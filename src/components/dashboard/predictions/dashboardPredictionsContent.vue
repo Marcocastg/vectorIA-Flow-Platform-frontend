@@ -15,7 +15,7 @@ const sortedStreamers = computed(() => {
     const ViewersA = a.averageViewers || 0;
     const ViewersB = b.averageViewers || 0;
     return ViewersB - ViewersA;
-  });
+  }).slice(0,4);
 });
 async function fetchStreamers() {
   try {
