@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
-import { useToast } from 'vue-toastification';
+import { toast } from 'vue-toastification';
 
 // --- ESTADO ---
 // Esta variable controlará qué formulario se muestra: 'login' o 'register'.
