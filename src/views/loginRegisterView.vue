@@ -30,7 +30,7 @@ const handleLogin = async () => {
   if (success) {
     // Si el login es exitoso, redirige al dashboard
     toast.success('¡Bienvenido de nuevo!');
-    router.push({ name: 'dashboard' });
+    router.push({ name: 'dashboardHome' });
   } else {
     // Si falla, muestra un mensaje de error
     toast.error('Email o contraseña incorrectos.');
