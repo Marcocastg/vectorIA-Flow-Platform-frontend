@@ -7,7 +7,8 @@ const router = useRouter();
 
 // --- CONFIGURACIÓN ---
 // Cambia esto si tu backend tiene otra URL base
-const API_URL = 'https://vectoria.me/api';
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
+const API_URL = `${baseUrl}/api`;
 
 // --- ESTADO ---
 const platform = ref('twitch'); // 'twitch' | 'kick'
