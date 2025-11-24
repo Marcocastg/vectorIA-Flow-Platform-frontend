@@ -59,7 +59,7 @@ const handlePredict = async () => {
             // Redirigir a la vista de reporte con los resultados
             // Pasamos los resultados como query params (o podrías usar Pinia/Store)
             router.push({
-                name: 'reports', // Asegúrate de que tu ruta se llame 'report' en router/index.js
+                name: 'reportsReport', // Asegúrate de que tu ruta se llame 'report' en router/index.js
                 query: {
                     data: JSON.stringify(response.data.prediccion),
                     platform: platform.value
