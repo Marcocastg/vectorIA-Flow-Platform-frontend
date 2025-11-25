@@ -2,7 +2,7 @@
 </script>
 <template>
     <section class="relative flex min-h-[60vh] items-center justify-center overflow-hidden py-20 md-py-32">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://ik.imagekit.io/mcgonza/backgroundhome.png')"></div>
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://ik.imagekit.io/mcgonza/background1.png')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-background-light via-background-light/50 to-transparent dark:from-background-dark dark:via-background-dark/50"></div>
     
     <div class="relative z-10 mx-auto max-w-4xl px-4 text-center">
