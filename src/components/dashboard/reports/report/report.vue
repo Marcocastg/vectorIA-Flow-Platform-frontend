@@ -12,7 +12,7 @@ const aiAnalysis = ref('');
 const loadingAI = ref(false);
 
 // URL de tu Backend NestJS
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://vectoriaflow-backend-nestjs-production.up.railway.app/api";
 
 onMounted(async () => {
     if (route.query.data) {
