@@ -2,12 +2,12 @@
 <template>
     <div class="@container">
     <div class="@[480px]:p-4">
-      <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4" style='background-image: linear-gradient(rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 0.9) 100%), url("https://ik.imagekit.io/mcgonza/bgblack.png");'>
+      <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4" style='background-image: linear-gradient(rgba(255, 255, 255, 0.85) 0%, rgba(248, 248, 248, 0.9) 100%), url("https://ik.imagekit.io/mcgonza/bgblack.png");'>
         <div class="flex flex-col gap-2 text-center">
-          <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+          <h1 class="text-black dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
             About StreamStats
           </h1>
-          <h2 class="text-white text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal">
+          <h2 class="text-gray-700 dark:text-white text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal">
             Unlocking the Future of Livestreaming with Data.
           </h2>
         </div>
