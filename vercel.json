@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://vectoriaflow-backend-nestjs-production.up.railway.app/api/:path*"
+      "destination": "https://supporting-prue-marcocastg-4919b58b.koyeb.app/api/:path*"
     }
   ]
 }
