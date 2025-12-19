@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const router = useRouter();
 // URL de tu backend NestJS
-const API_URL = 'https://vectoriaflow-backend-nestjs-production.up.railway.app/api';
+const API_URL = 'https://vectoria.me/api';
 
 // Estado
 const platform = ref('twitch');
