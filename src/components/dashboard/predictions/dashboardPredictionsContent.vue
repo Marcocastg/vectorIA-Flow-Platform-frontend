@@ -4,8 +4,11 @@ import { useRouter } from 'vue-router';
 import axios from 'axios';
 
 const router = useRouter();
-// URL de tu backend NestJS
-const API_URL = 'https://vectoria.me/api';
+
+// --- CORRECCIÓN: USAR RUTA RELATIVA ---
+// Al poner solo '/api', usamos el proxy de Vercel (vercel.json).
+// Esto evita errores de CORS, redirecciones y problemas de www vs no-www.
+const API_URL = '/api'; 
 
 // Estado
 const platform = ref('twitch');
@@ -46,12 +49,12 @@ const handlePredict = async () => {
             payload[key] = Number(payload[key]);
         }
 
+        // axios completará la URL a: https://tudominio.com/api/predictions
         const response = await axios.post(`${API_URL}/predictions`, payload, {
             params: { platform: platform.value }
         });
 
         if (response.data.status === 'success') {
-            // --- CAMBIO CLAVE: Fusionamos input + predicción ---
             const fullData = {
                 ...response.data.input_received, // Datos históricos (D1, D14)
                 ...response.data.prediccion,     // Datos futuros (D30)
