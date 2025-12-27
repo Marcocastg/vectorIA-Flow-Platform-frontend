@@ -34,6 +34,19 @@ const formKick = reactive({
     FOLLOWERS_D21: ''
 });
 
+onMounted(async () => {
+    // Apenas el usuario entra a esta vista, "tocamos" al servidor
+    console.log("Despertando motor de IA en segundo plano...");
+    try {
+        // No necesitamos esperar la respuesta (await no es bloqueante para la UI aquí)
+        // Lo hacemos "fire and forget" para no ralentizar la carga de la página
+        axios.get(`${API_URL}/predictions/wakeup`);
+    } catch (e) {
+        // Ignoramos errores aquí silenciosamente
+        console.log("Intento de despertar enviado.");
+    }
+});
+
 const handlePredict = async () => {
     isLoading.value = true;
     error.value = null;
