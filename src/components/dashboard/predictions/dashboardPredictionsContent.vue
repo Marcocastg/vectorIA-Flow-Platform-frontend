@@ -129,7 +129,7 @@ const handlePredict = async () => {
                         <div v-if="platform === 'twitch'" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-text-light dark:text-text-dark mb-2">Channel Name</label>
-                                <input v-model="formTwitch.channelName" type="text" required class="w-full px-4 py-3 rounded-lg border border-light dark:border-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="e.g. 2000">
+                                <input v-model="formTwitch.channelName" type="text" required class="w-full px-4 py-3 rounded-lg border border-light dark:border-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="e.g. MarcoCastG">
                             </div>
                             <!-- Día 1 -->
                             <div class="md:col-span-2">
@@ -183,7 +183,7 @@ const handlePredict = async () => {
                         <div v-if="platform === 'kick'" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-text-light dark:text-text-dark mb-2">Channel Name</label>
-                                <input v-model="formTwitch.channelName" type="text" required class="w-full px-4 py-3 rounded-lg border border-light dark:border-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="e.g. 2000">
+                                <input v-model="formTwitch.channelName" type="text" required class="w-full px-4 py-3 rounded-lg border border-light dark:border-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="e.g. MarcoCastG">
                             </div>
                             <div class="md:col-span-2">
                                 <h3 class="text-sm font-bold text-green-500 uppercase mb-4">Initial Metrics (D1)</h3>
