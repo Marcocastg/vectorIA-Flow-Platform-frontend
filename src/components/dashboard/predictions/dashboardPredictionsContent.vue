@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const router = useRouter();
 // URL de tu backend NestJS
-const API_URL = 'https://supporting-prue-marcocastg-4919b58b.koyeb.app/api';
+const API_URL = '/api';
 
 // Estado
 const platform = ref('twitch');
