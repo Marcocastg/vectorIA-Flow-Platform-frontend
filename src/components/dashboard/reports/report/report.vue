@@ -12,7 +12,7 @@ const aiAnalysis = ref('');
 const loadingAI = ref(false);
 
 // URL de tu Backend NestJS
-const API_URL = "https://supporting-prue-marcocastg-4919b58b.koyeb.app/api";
+const API_URL = "/api";
 
 onMounted(async () => {
     if (route.query.data) {
