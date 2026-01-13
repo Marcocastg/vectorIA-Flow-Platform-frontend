@@ -14,6 +14,7 @@ const error = ref(null);
 
 // Datos del Formulario (Twitch)
 const formTwitch = reactive({
+    channelName: '',
     avgViewers_d1: '',
     minutesStreamed_d1: '',
     followers_d1: '',
@@ -26,6 +27,7 @@ const formTwitch = reactive({
 
 // Datos del Formulario (Kick)
 const formKick = reactive({
+    channelName: '',
     AVG_VIEWERS_D1: '',
     HOURS_STREAMED_D1: '',
     AVG_VIEWERS_D14: '',
@@ -52,11 +54,14 @@ const handlePredict = async () => {
     error.value = null;
 
     try {
-        const payload = platform.value === 'twitch' ? { ...formTwitch } : { ...formKick };
+        const sourceForm = platform.value === 'twitch' ? formTwitch : formKick;
+
+        const { channelName, ...numericData } = sourceForm;
         
         // Convertir a números
-        for (const key in payload) {
-            payload[key] = Number(payload[key]);
+        const payload = {};
+        for (const key in numericData) {
+            payload[key] = Number(numericData[key]);
         }
 
         const response = await axios.post(`${API_URL}/predictions`, payload, {
@@ -66,6 +71,7 @@ const handlePredict = async () => {
         if (response.data.status === 'success') {
             // --- CAMBIO CLAVE: Fusionamos input + predicción ---
             const fullData = {
+                channelName: channelName,
                 ...response.data.input_received, // Datos históricos (D1, D14)
                 ...response.data.prediccion,     // Datos futuros (D30)
                 platform: platform.value
@@ -183,7 +189,7 @@ const handlePredict = async () => {
                         <div v-if="platform === 'kick'" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-text-light dark:text-text-dark mb-2">Channel Name</label>
-                                <input v-model="formTwitch.channelName" type="text" required class="w-full px-4 py-3 rounded-lg border border-light dark:border-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="e.g. MarcoCastG">
+                                <input v-model="formKick.channelName" type="text" required class="w-full px-4 py-3 rounded-lg border border-light dark:border-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="e.g. MarcoCastG">
                             </div>
                             <div class="md:col-span-2">
                                 <h3 class="text-sm font-bold text-green-500 uppercase mb-4">Initial Metrics (D1)</h3>
