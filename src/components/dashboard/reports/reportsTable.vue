@@ -27,8 +27,20 @@ const fetchReports = async () => {
             withCredentials: true // IMPORTANTE: Para enviar la cookie de sesión
         });
         
-        if (response.data.status === 'success') {
-            reports.value = response.data.data;
+        // Si el backend devuelve un objeto Result (con _value), lo desempaquetamos.
+        const responseData = response.data; // Puede ser { status: 'success', data: { _value: [...] } }
+
+        if (responseData.data) {
+            if (Array.isArray(responseData.data)) {
+                // Caso A: Devuelve array directo
+                reports.value = responseData.data;
+            } else if (responseData.data._value && Array.isArray(responseData.data._value)) {
+                // Caso B: Devuelve objeto Result (Tu caso actual)
+                reports.value = responseData.data._value;
+            } else {
+                console.warn("Formato de respuesta inesperado:", responseData);
+                reports.value = [];
+            }
         }
     } catch (e) {
         console.error("Error fetching reports", e);
