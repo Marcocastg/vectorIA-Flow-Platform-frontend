@@ -23,7 +23,7 @@ const formatDate = (dateString) => {
 
 const fetchReports = async () => {
     try {
-        const response = await axios.get(`${API_URL}/reports`, {
+        const response = await axios.get(`${API_URL}/report`, {
             withCredentials: true // IMPORTANTE: Para enviar la cookie de sesión
         });
         
