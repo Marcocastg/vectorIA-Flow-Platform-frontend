@@ -19,9 +19,15 @@ onMounted(async () => {
         try {
             predictionData.value = JSON.parse(route.query.data);
             platform.value = route.query.platform || 'Platform';
-            
-            // --- LLAMADA A GEMINI ---
-            await fetchAIAnalysis();
+        
+            // Si el reporte viene del historial, ya tiene el análisis guardado.
+            if (predictionData.value.savedAnalysis) {
+                console.log("Cargando análisis desde historial (sin consumo de API)");
+                aiAnalysis.value = predictionData.value.savedAnalysis;
+            } else {
+                // Si es una predicción nueva, llamamos a la IA (y guardamos)
+                await fetchAIAnalysis();
+            }
 
         } catch (e) {
             console.error("Error parsing data", e);
@@ -48,6 +54,8 @@ const fetchAIAnalysis = async () => {
             metrics: metrics,
             channelName: predictionData.value.channelName || 'Unknown',
             rawInput: predictionData.value,
+        }, {
+            withCredentials: true // Importante para asociar al usuario
         });
 
         aiAnalysis.value = res.data.analysis;
