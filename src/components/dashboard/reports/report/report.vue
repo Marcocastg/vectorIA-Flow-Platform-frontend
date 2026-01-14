@@ -45,8 +45,11 @@ const fetchAIAnalysis = async () => {
     try {
         const res = await axios.post(`${API_URL}/predictions/analyze`, {
             platform: platform.value,
-            metrics: metrics
+            metrics: metrics,
+            channelName: predictionData.value.channelName || 'Unknown',
+            rawInput: predictionData.value,
         });
+
         aiAnalysis.value = res.data.analysis;
     } catch (error) {
         console.error("Error fetching AI analysis", error);
