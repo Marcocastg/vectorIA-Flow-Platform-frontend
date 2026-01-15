@@ -50,13 +50,49 @@ const fetchReports = async () => {
 };
 
 const viewReport = (report) => {
-    // Reconstruimos el objeto de datos tal como lo espera la vista Report.vue
-    // Fusionamos input (histórico) + prediction (futuro) + análisis guardado
+    let mappedInput = {};
+    let mappedPrediction = {};
+    const input = report.inputData || {};
+    const pred = report.predictionData || {};
+
+    if (report.platformName === 'twitch') {
+        mappedInput = {
+            avgViewers_d1: input.avgViewers1,
+            avgViewers_d14: input.avgViewers2,
+            followers_d1: input.followers1,
+            followers_d14: input.followers2,
+            minutesStreamed_d1: input.minutesStreamed1 || input.time_streamed_1,
+            minutesStreamed_d14: input.minutesStreamed2 || input.time_streamed_2,
+            comments_most_viewed: input.comments_most_viewed,
+            comments_least_viewed: input.comments_least_viewed
+        };
+        mappedPrediction = {
+            followers_d30: pred.followers_predicted,
+            avg_viewers_d30: pred.viewers_predicted,
+            debug_crecimiento: pred.growth_net
+        };
+    } else {
+        mappedInput = {
+            FOLLOWERS_D14: input.followers1,
+            FOLLOWERS_D21: input.followers2,
+            
+            AVG_VIEWERS_D1: input.avgViewers1,
+            AVG_VIEWERS_D14: input.avgViewers2,
+            
+            HOURS_STREAMED_D1: input.minutesStreamed1 || input.time_streamed_1,
+            HOURS_STREAMED_D14: input.minutesStreamed2 || input.time_streamed_2
+        };
+        mappedPrediction = {
+            followers_d28: pred.followers_predicted,
+            prediccion_viewers_30d: pred.viewers_predicted,
+            crecimiento_neto: pred.growth_net
+        };
+    }
     const fullData = {
         channelName: report.channelName,
         platform: report.platformName,
-        ...report.inputData,      // Datos D1, D14
-        ...report.predictionData, // Datos D30
+        ...mappedInput,      // Datos D1, D14
+        ...mappedPrediction, // Datos D30
         savedAnalysis: report.aiAnalysis // Pasamos el texto para no llamar a la IA de nuevo
     };
 
